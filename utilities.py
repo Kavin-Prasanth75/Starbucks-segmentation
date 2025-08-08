@@ -151,7 +151,7 @@ def get_offer_engagements(aux_df, viewed_df, completed_df, transactions_df):
     Used inside pd.apply() along columns axis to extract for each offer (row)
     viewing and completion times from relevant input dataframes based on programmed
     logic then for each offer (row) return output_value of list type in the form
-    [offer_viewed_time, offer_completed_time] with NaN inplace of any invaild element
+    [offer_viewed_time, offer_completed_time] with nan inplace of any invaild element
 
     Args:
     aux_df (pd.DataFrame): subject dataframe containing received offers records
@@ -162,7 +162,7 @@ def get_offer_engagements(aux_df, viewed_df, completed_df, transactions_df):
         transactions originating from `transcript` split based on value type
 
     Return:
-    output_value (list): [offer_viewed_time, offer_completed_time] with NaN
+    output_value (list): [offer_viewed_time, offer_completed_time] with nan
         inplace of any invaild element based on programmed logic
     '''
 
@@ -186,7 +186,7 @@ def get_offer_engagements(aux_df, viewed_df, completed_df, transactions_df):
     ]['time'].tolist()
 
     # Store view time if available in list else return NaN
-    offer_viewed_time = np.NaN if not viewed_time_list else viewed_time_list[0]
+    offer_viewed_time = np.nan if not viewed_time_list else viewed_time_list[0]
 
 
     # PART B -- Get offer_completed_time
@@ -220,7 +220,7 @@ def get_offer_engagements(aux_df, viewed_df, completed_df, transactions_df):
                 completed_time_list.append(transaction_time)
 
     # Store completion time if available in list else return NaN
-    offer_completed_time = np.NaN if not completed_time_list else completed_time_list[0]
+    offer_completed_time = np.nan if not completed_time_list else completed_time_list[0]
 
 
     # Create return object
