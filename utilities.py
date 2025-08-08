@@ -185,7 +185,7 @@ def get_offer_engagements(aux_df, viewed_df, completed_df, transactions_df):
         (viewed_df['time'] <= offer_end_time)
     ]['time'].tolist()
 
-    # Store view time if available in list else return NaN
+    # Store view time if available in list else return nan
     offer_viewed_time = np.nan if not viewed_time_list else viewed_time_list[0]
 
 
@@ -219,7 +219,7 @@ def get_offer_engagements(aux_df, viewed_df, completed_df, transactions_df):
                 (transaction_time <= offer_end_time)):
                 completed_time_list.append(transaction_time)
 
-    # Store completion time if available in list else return NaN
+    # Store completion time if available in list else return nan
     offer_completed_time = np.nan if not completed_time_list else completed_time_list[0]
 
 
@@ -300,7 +300,7 @@ def get_transactions_allotment(df, aux_df, transactions_df):
     recency for promo and nonpromo transactions required for RFM score computation
     later then for each customer (row) return output_value of list type in the form
     [txn_overall, amt_overall, txn_promo, amt_promo, txn_nonpromo, amt_nonpromo,
-    recency_promo, recency_nonpromo] with NaN inplace of any invaild element
+    recency_promo, recency_nonpromo] with nan inplace of any invaild element
 
     Args:
     df (pd.DataFrame): subject dataframe containing records grouped by customers
@@ -310,7 +310,7 @@ def get_transactions_allotment(df, aux_df, transactions_df):
 
     Return:
     output_value (list): [txn_overall, amt_overall, txn_promo, amt_promo,
-        txn_nonpromo, amt_nonpromo, recency_promo, recency_nonpromo] with NaN
+        txn_nonpromo, amt_nonpromo, recency_promo, recency_nonpromo] with nan
         inplace of any invaild element based on programmed logic
     '''
 
@@ -394,10 +394,10 @@ def get_transactions_allotment(df, aux_df, transactions_df):
     # PART B -- Get recency for RFM score
 
     # Get recency_promo: time of most recent promo transaction
-    recency_promo = np.NaN if not promo else promo[-1][0]
+    recency_promo = np.nan if not promo else promo[-1][0]
 
     # Get recency_nonpromo: time of most recent nonpromo transaction
-    recency_nonpromo = np.NaN if not nonpromo else nonpromo[-1][0]
+    recency_nonpromo = np.nan if not nonpromo else nonpromo[-1][0]
 
 
     # Create return object
